@@ -39,12 +39,10 @@ module.exports = {
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin(),
         new HtmlWebpackPlugin({
-            title: 'Covid dashboard',
-            favicon: path.resolve(__dirname, 'src', 'assets', 'favicon', 'favicon.svg'),
+            template: path.resolve(__dirname, 'public', 'index.html'),
+            inject: 'head',
+            scriptLoading: 'defer',
             publicPath: '',
-            meta: {
-                'theme-color': '#282C34',
-            },
         }),
         new ESLintPlugin(),
     ],
